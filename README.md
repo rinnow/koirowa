@@ -1,0 +1,3 @@
+# koirowa
+恋愛ロワイアルからスキデータを取得します
+current directoryにchrome driverを置いて実行してください
