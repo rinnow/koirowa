@@ -3,8 +3,11 @@ import time
 import csv
 
 votes = {}
-	
-driver = webdriver.Chrome('./chromedriver')
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(executable_path='./chromedriver', options=options)
+#driver = webdriver.Chrome('./chromedriver')
 
 for i in range(13):
     name=''
@@ -31,3 +34,5 @@ with open('votes.csv', 'w') as f:
     w = csv.writer(f, lineterminator='\n')
     for i in votes:
         w.writerow(i)
+
+driver.close()
